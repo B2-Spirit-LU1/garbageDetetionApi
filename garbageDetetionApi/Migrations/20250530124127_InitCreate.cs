@@ -16,13 +16,14 @@ namespace garbageDetetionApi.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Detected = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Confidence_score = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    DetectedObject = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhotoName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ConfidenceSpeed = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Weather = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Temp = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Humidity = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Windspeed = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    WindSpeed = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    TimeStamp = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
