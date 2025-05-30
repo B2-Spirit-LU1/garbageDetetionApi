@@ -11,7 +11,7 @@ namespace garbageDetetionApi.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<decimal>(
-                name: "Windspeed",
+                name: "WindSpeed",
                 table: "Garbages",
                 type: "decimal(18,2)",
                 nullable: true,
@@ -47,7 +47,7 @@ namespace garbageDetetionApi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<decimal>(
-                name: "Windspeed",
+                name: "WindSpeed",
                 table: "Garbages",
                 type: "decimal(18,2)",
                 nullable: false,
