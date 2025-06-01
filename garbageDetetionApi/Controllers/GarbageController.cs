@@ -63,7 +63,7 @@ namespace garbageDetetionApi.Controllers
                 }
 
                 var garbages = await context.Garbages
-                    .OrderByDescending(g => g.Timestamp)
+                    .OrderByDescending(g => g.TimeStamp)
                     .Take(amount)
                     .ToListAsync();
 
