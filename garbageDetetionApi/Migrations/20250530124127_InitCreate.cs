@@ -18,7 +18,7 @@ namespace garbageDetetionApi.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DetectedObject = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhotoName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ConfidenceSpeed = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    ConfidenceScore = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Weather = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Temp = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Humidity = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
