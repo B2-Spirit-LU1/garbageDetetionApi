@@ -31,17 +31,17 @@ namespace garbageDetetionApi.Controllers
 
         //  GET: api/garbage/time/{timestamp}
         [HttpGet("time/{timestamp}")]
-        public async Task<ActionResult<Garbage>> GetByTimeToNow(DateTime timeStamp)
+        public async Task<ActionResult<Garbage>> GetByTimeToNow(DateTime timestamp)
         {
             try
             {
                 var garbages = await context.Garbages
-                    .Where(g => g.TimeStamp >= timeStamp)
+                    .Where(g => g.Timestamp >= timestamp)
                     .ToListAsync();
 
                 if (!garbages.Any())
                 {
-                    return NotFound($"No garbage records found after {timeStamp}.");
+                    return NotFound($"No garbage records found after {timestamp}.");
                 }
                 return Ok(garbages);
             }
@@ -63,7 +63,7 @@ namespace garbageDetetionApi.Controllers
                 }
 
                 var garbages = await context.Garbages
-                    .OrderByDescending(g => g.TimeStamp)
+                    .OrderByDescending(g => g.Timestamp)
                     .Take(amount)
                     .ToListAsync();
 
@@ -123,13 +123,13 @@ namespace garbageDetetionApi.Controllers
                 var weatherResponse = JsonDocument.Parse(json).RootElement;
 
                 garbage.Id = Guid.NewGuid();
-                garbage.DetectedObject = garbage.DetectedObject;
-                garbage.ConfidenceScore = garbage.ConfidenceScore;
+                garbage.Detected = garbage.Detected;
+                garbage.Confidence_score = garbage.Confidence_score;
                 garbage.Weather = weatherResponse.GetProperty("weather")[0].GetProperty("main").GetString();
                 garbage.Temp = Convert.ToDecimal(weatherResponse.GetProperty("main").GetProperty("temp").GetDouble());
                 garbage.Humidity = Convert.ToDecimal(weatherResponse.GetProperty("main").GetProperty("humidity").GetInt32());
-                garbage.WindSpeed = Convert.ToDecimal(weatherResponse.GetProperty("wind").GetProperty("speed").GetDouble());
-                garbage.TimeStamp = DateTime.UtcNow;
+                garbage.Windspeed = Convert.ToDecimal(weatherResponse.GetProperty("wind").GetProperty("speed").GetDouble());
+                garbage.Timestamp = DateTime.UtcNow;
 
                 context.Garbages.Add(garbage);
                 await context.SaveChangesAsync();

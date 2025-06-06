@@ -5,17 +5,15 @@
         public Guid Id { get; set; }
 
         [System.ComponentModel.DataAnnotations.Required]
-        public string DetectedObject { get; set; }
-
-        public string ImageName { get; set; } = string.Empty;
+        public string Detected { get; set; }
 
         [System.ComponentModel.DataAnnotations.Required]
-        public decimal ConfidenceScore { get; set; }
+        public decimal Confidence_score { get; set; }
          
         public string? Weather { get; set; }
         public decimal? Temp { get; set; }
         public decimal? Humidity { get; set; }
-        public decimal? WindSpeed { get; set; }
-        public DateTime TimeStamp { get; set; }
+        public decimal? Windspeed { get; set; }
+        public DateTime Timestamp { get; set; }
     }
 }

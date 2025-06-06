@@ -28,30 +28,26 @@ namespace garbageDetetionApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("ConfidenceScore")
+                    b.Property<decimal>("Confidence_score")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("DetectedObject")
+                    b.Property<string>("Detected")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal?>("Humidity")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("ImageName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<decimal?>("Temp")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("TimeStamp")
+                    b.Property<DateTime>("Timestamp")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Weather")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal?>("WindSpeed")
+                    b.Property<decimal?>("Windspeed")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
@@ -62,62 +58,57 @@ namespace garbageDetetionApi.Migrations
                         new
                         {
                             Id = new Guid("11111111-1111-1111-1111-111111111111"),
-                            ConfidenceScore = 0.95m,
-                            DetectedObject = "Plastic Bottle",
+                            Confidence_score = 0.95m,
+                            Detected = "Plastic Bottle",
                             Humidity = 45.0m,
-                            ImageName = "plastic_bottle",
                             Temp = 22.5m,
-                            TimeStamp = new DateTime(2025, 5, 15, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            Timestamp = new DateTime(2025, 5, 15, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             Weather = "Sunny",
-                            WindSpeed = 5.2m
+                            Windspeed = 5.2m
                         },
                         new
                         {
                             Id = new Guid("22222222-2222-2222-2222-222222222222"),
-                            ConfidenceScore = 0.89m,
-                            DetectedObject = "Can",
+                            Confidence_score = 0.89m,
+                            Detected = "Can",
                             Humidity = 55.0m,
-                            ImageName = "can",
                             Temp = 18.3m,
-                            TimeStamp = new DateTime(2025, 5, 15, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            Timestamp = new DateTime(2025, 5, 15, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             Weather = "Cloudy",
-                            WindSpeed = 3.8m
+                            Windspeed = 3.8m
                         },
                         new
                         {
                             Id = new Guid("33333333-3333-3333-3333-333333333333"),
-                            ConfidenceScore = 0.92m,
-                            DetectedObject = "Paper",
+                            Confidence_score = 0.92m,
+                            Detected = "Paper",
                             Humidity = 80.0m,
-                            ImageName = "paper",
                             Temp = 16.0m,
-                            TimeStamp = new DateTime(2025, 5, 15, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            Timestamp = new DateTime(2025, 5, 15, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             Weather = "Rainy",
-                            WindSpeed = 7.1m
+                            Windspeed = 7.1m
                         },
                         new
                         {
                             Id = new Guid("44444444-4444-4444-4444-444444444444"),
-                            ConfidenceScore = 0.88m,
-                            DetectedObject = "Glass",
+                            Confidence_score = 0.88m,
+                            Detected = "Glass",
                             Humidity = 50.0m,
-                            ImageName = "glass",
                             Temp = 20.0m,
-                            TimeStamp = new DateTime(2025, 5, 15, 13, 0, 0, 0, DateTimeKind.Unspecified),
+                            Timestamp = new DateTime(2025, 5, 15, 13, 0, 0, 0, DateTimeKind.Unspecified),
                             Weather = "Windy",
-                            WindSpeed = 12.0m
+                            Windspeed = 12.0m
                         },
                         new
                         {
                             Id = new Guid("55555555-5555-5555-5555-555555555555"),
-                            ConfidenceScore = 0.90m,
-                            DetectedObject = "Food Wrapper",
+                            Confidence_score = 0.90m,
+                            Detected = "Food Wrapper",
                             Humidity = 40.0m,
-                            ImageName = "food_wrapper",
                             Temp = 24.0m,
-                            TimeStamp = new DateTime(2025, 5, 15, 14, 0, 0, 0, DateTimeKind.Unspecified),
+                            Timestamp = new DateTime(2025, 5, 15, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             Weather = "Sunny",
-                            WindSpeed = 4.5m
+                            Windspeed = 4.5m
                         });
                 });
 #pragma warning restore 612, 618
