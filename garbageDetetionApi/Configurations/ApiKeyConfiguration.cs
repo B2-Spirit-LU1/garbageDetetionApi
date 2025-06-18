@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace LitterLinq.Configurations
 {
-    public class LitterConfiguration : IEntityTypeConfiguration<ApiKey>
+    public class ApiKeyConfiguration : IEntityTypeConfiguration<ApiKey>
 
     {
         public void Configure(EntityTypeBuilder<ApiKey> builder)
